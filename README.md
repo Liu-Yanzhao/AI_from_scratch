@@ -7,6 +7,8 @@ There are 3 main portions for an AI model to learn.
 3. Updating variables
 
 # Introduction to the dataset
+<img src="https://production-media.paperswithcode.com/datasets/MNIST-0000000001-2e09631a_09liOmx.jpg">
+
 We are using a dataset from MNIST (Modified National Institute of Standards and Technology). MNIST is the de facto “hello world” dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms.
 
 We will be using picutres that are 28x28 training pixels. 
