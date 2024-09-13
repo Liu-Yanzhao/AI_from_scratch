@@ -25,7 +25,7 @@ There are `m` of this pictures.  This will result in a total of `m` 784 pixels o
 
 Now instead of each row being an example, each column is an example. 
 
-$x = \begin{bmatrix}---x^1---\\---x^2---\\.\\.\\.\\---x^m---\\\end{bmatrix}^T=\begin{bmatrix}|&& | && && |\\ | && | && && |\\ x^1 && x^2 && ... && x^m\\|&& | && && |\\ | && | && && |\end{bmatrix}$
+$x = \begin{bmatrix}\text{---}x^1\text{---}\\\text{---}x^2\text{---}\\ \vdots \\\text{---}x^m\text{---}\\\end{bmatrix}^T=\begin{bmatrix}|&& \text{|} && && \text{|} \\ \text{|} && \text{|} && && \text{|}\\ x^1 && x^2 && \cdots && x^m\\\text{|}&& \text{|} && && \text{|}\\ \text{|} && \text{|} && && \text{|}\end{bmatrix}$
 
 # Neural Network
 We are going to have 3 layers
@@ -58,7 +58,7 @@ $[10 \times m] = [10 \times 784] \times [784 \times m] + [10 \times 1]$
 
 Now we are going to apply an activation function to it. By applying an activation function to it, an linear combination between nodes can be avoided (which creates a linear regression model which is not what we are looking for). We will be using an activation function called Rectified Linear Unit (ReLU). 
 
-$R(x) = \left\{\begin{matrix}x & \text{if }x > 0\\0 & \text{otherwise}\\\end{matrix}\right.$\
+$R(x) = \begin{cases}x & \text{if }x > 0\\0 & \text{otherwise}\end{cases}$\
 <img style="height:200px;" src="https://www.nomidl.com/wp-content/uploads/2022/04/image-10.png">
 
 
@@ -76,7 +76,7 @@ We will now run an algorithm to optimise the weights and biases. We are going th
 first, we will find out how much deviation there is between the prediction and the actual expected result.\
 $dZ^{[2]}=A^{[2]}-Y$\
 where (assume 3 is the correct answer): \
-$A^{[2]}=\begin{bmatrix}0.5\\3.5\\4.7\\2.3\\.\\.\\.\end{bmatrix}$, $Y=\begin{bmatrix}0\\0\\1\\0\\.\\.\\.\end{bmatrix}$ \
+$A^{[2]}=\begin{bmatrix}0.5\\3.5\\4.7\\2.3\\\vdots\end{bmatrix}$, $Y=\begin{bmatrix}0.0\\0.0\\1.0\\0.0\\\vdots\end{bmatrix}$ \
 This process of encoding y=3 is called hot-coding. 
 
 now we can find out how much the weight and biases in the output layer contributed to the deviation\
