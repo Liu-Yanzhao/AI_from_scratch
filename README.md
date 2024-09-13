@@ -25,7 +25,21 @@ There are `m` of this pictures.  This will result in a total of `m` 784 pixels o
 
 Now instead of each row being an example, each column is an example. 
 
-$$ x = \begin{bmatrix}\text{---}x^1\text{---}\\\text{---}x^2\text{---}\\ \vdots \\\text{---}x^m\text{---}\\\end{bmatrix}^T=\begin{bmatrix}|&& \text{|} && && \text{|} \\ \text{|} && \text{|} && && \text{|}\\ x^1 && x^2 && \cdots && x^m\\\text{|}&& \text{|} && && \text{|}\\ \text{|} && \text{|} && && \text{|}\end{bmatrix} $$
+$$ 
+x = 
+\begin{bmatrix}
+\text{---}x^1\text{---}\\\text{---}x^2\text{---} \\
+\vdots \\\text{---}x^m\text{---}
+\end{bmatrix}^T
+=
+\begin{bmatrix}
+\text{|}&& \text{|} && && \text{|} \\
+\text{|} && \text{|} && && \text{|}\\
+x^1 && x^2 && \cdots && x^m\\
+\text{|}&& \text{|} && && \text{|}\\
+\text{|} && \text{|} && && \text{|}
+\end{bmatrix}
+$$
 
 # Neural Network
 We are going to have 3 layers
@@ -55,13 +69,21 @@ $$ A^{[0]}=x (784 \times m) $$
 $Z^{[1]}$ refers to the unactivated hidden layer. It is computed by multiplying a weight, $W^{[1]}$. with the value from the input layer, $A^{[0]}$, and adding a bias, $b^{[1]}$, to it.
 
 $$ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} $$
+
 If we were to look at the size of the matrix, it will look something like this.
 
 $$ [10 \times m] = [10 \times 784] \times [784 \times m] + [10 \times 1] $$
 
 Now we are going to apply an activation function to it. By applying an activation function to it, an linear combination between nodes can be avoided (which creates a linear regression model which is not what we are looking for). We will be using an activation function called Rectified Linear Unit (ReLU). 
 
-$$ R(x) = \begin{cases}x & \text{if }x > 0 \\ 0 & \text{otherwise}\end{cases} $$
+$$ 
+R(x) =
+\begin{cases}
+x & \text{if }x > 0 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
 <img src="https://www.nomidl.com/wp-content/uploads/2022/04/image-10.png">
 
 
@@ -69,24 +91,57 @@ By using this function, we can get out activated hidden layer values.
 
 $$ A^{[1]}=g(Z^{[1]})=ReLU(Z^{[1]}) $$
 
-now we can do something similiar to get from the hidden layer to the output.
+Now we can do something similiar to get from the hidden layer to the output.
 
 $$ Z^{[2]} = W^{[2]}A^{[1]} + b{[2]} $$
 
-But instead of using ReLU, we will apply a activation function called softmax to make the output values become probabilities, where all the probailities added up becomes 1
-.
-$$ \begin{bmatrix}-0.1\\3.8\\1.1\\-0.3\end{bmatrix} \rightarrow \frac{e^{z_i}}{\sum_{j=1}^{K}e^zj} \rightarrow \begin{bmatrix}0.02\\0.91\\0.06\\0.01\end{bmatrix} $$
+But instead of using ReLU, we will apply a activation function called softmax to make the output values become probabilities, where all the probailities added up becomes 1.
+
+$$
+\begin{bmatrix}
+-0.1\\
+3.8\\
+1.1\\
+-0.3
+\end{bmatrix}
+\rightarrow
+\frac{e^{z_i}}{\sum_{j=1}^{K}e^zj}
+\rightarrow
+\begin{bmatrix}
+0.02\\
+0.91\\
+0.06\\
+0.01
+\end{bmatrix}
+$$
 
 # Back Propogation
 We will now run an algorithm to optimise the weights and biases. We are going the opposite way. We will look at the prediction and the expected outcome. We can then find how much deviation there is between the both of them and find out how much each respective weights and biases contributed to it. 
 
-first, we will find out how much deviation there is between the prediction and the actual expected result.
+First, we will find out how much deviation there is between the prediction and the actual expected result.
 
 $$ dZ^{[2]}=A^{[2]}-Y $$
 
-where (assume 3 is the correct answer):
+Where (assume 3 is the correct answer):
 
-$$ A^{[2]}=\begin{bmatrix}0.5\\3.5\\4.7\\2.3\\\vdots\end{bmatrix},\quad Y=\begin{bmatrix}0.0\\0.0\\1.0\\0.0\\\vdots\end{bmatrix} $$
+$$
+A^{[2]}=
+\begin{bmatrix}
+0.5\\
+3.5\\
+4.7\\
+2.3\\
+\vdots
+\end{bmatrix}
+,\quad 
+Y=
+\begin{bmatrix}
+0.0\\
+0.0\\
+1.0\\
+0.0\\
+\vdots
+\end{bmatrix}$$
 
 This process of encoding y=3 is called hot-coding. 
 
