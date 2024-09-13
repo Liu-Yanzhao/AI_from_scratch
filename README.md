@@ -6,7 +6,9 @@ There are 3 main portions for an AI model to learn.
 2. Back Propogation
 3. Updating variables
 
-# Introduction
+# Introduction to the dataset
+We are using a dataset from MNIST (Modified National Institute of Standards and Technology). MNIST is the de facto “hello world” dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms.
+
 We will be using picutres that are 28x28 training pixels. 
 ```
 +---------+
@@ -87,10 +89,11 @@ from here, we do ssomehting similiar to what we did between the output and hidde
 <img src="https://latex.codecogs.com/gif.latex?db^{[1]}=\frac{1}{m} \sum dZ^{[1]}">
 
 # Updating parameters
-This is the final part, we update the parameters with the decided value to nudge them by. 
-
+This is the final part, we update the parameters with the decided value to nudge them by. \
 <img src="https://latex.codecogs.com/gif.latex?\alpha = \text{learning rate}">\
 <img src="https://latex.codecogs.com/gif.latex?W^{[1]}=W^{[1]} - \alpha dW^{[1]}">\
 <img src="https://latex.codecogs.com/gif.latex?b^{[1]}=b^{[1]} - \alpha db^{[1]}">\
 <img src="https://latex.codecogs.com/gif.latex?W^{[2]}=W^{[2]} - \alpha dW^{[2]}">\
-<img src="https://latex.codecogs.com/gif.latex?b^{[2]}=b^{[2]} - \alpha db^{[2]}">\
+<img src="https://latex.codecogs.com/gif.latex?b^{[2]}=b^{[2]} - \alpha db^{[2]}">
+
+Once we update it, we run it for x iterations. 
