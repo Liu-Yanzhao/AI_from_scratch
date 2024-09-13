@@ -28,8 +28,10 @@ Now instead of each row being an example, each column is an example.
 $$ 
 x = 
 \begin{bmatrix}
-\text{-----}x^1\text{-----}\\\text{-----}x^2\text{-----} \\
-\vdots \\\text{-----}x^m\text{-----}
+\text{-----}x^1\text{-----}\\
+\text{-----}x^2\text{-----} \\
+\vdots \\
+\text{-----}x^m\text{-----}
 \end{bmatrix}^T =
 \begin{bmatrix}
 \text{|}&& \text{|} && && \text{|} \\
