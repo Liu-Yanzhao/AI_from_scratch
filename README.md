@@ -58,7 +58,7 @@ $[10 \times m] = [10 \times 784] \times [784 \times m] + [10 \times 1]$
 
 Now we are going to apply an activation function to it. By applying an activation function to it, an linear combination between nodes can be avoided (which creates a linear regression model which is not what we are looking for). We will be using an activation function called Rectified Linear Unit (ReLU). 
 
-$R(x) = \begin{cases}x & \text{if }x > 0\\0 & \text{otherwise}\end{cases}$\
+$$R(x) = \begin{cases}x & \text{if }x > 0\\0 & \text{otherwise}\end{cases}$$\
 <img style="height:200px;" src="https://www.nomidl.com/wp-content/uploads/2022/04/image-10.png">
 
 
