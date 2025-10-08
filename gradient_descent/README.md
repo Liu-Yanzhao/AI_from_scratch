@@ -59,9 +59,7 @@ thats all the math there is yipee!
 
 in this notbook, i also visualised the gradient descent trajectory with a couple of graphs
 
-<p align="center">
-  <img src="newplot.png" alt="graph" width="500"/>
-</p>
+
 
 <p align="center">
   <img src="output.png" alt="graph" width="500"/>
@@ -75,9 +73,16 @@ learning rate = 0.01
   <img src="low.png" alt="graph" width="500"/>
 </p>
 
+<p align="center">
+  <img src="newplot.png" alt="graph" width="500"/>
+</p>
+
 
 learning rate = 0.07
 
 <p align="center">
   <img src="high.png" alt="graph" width="500"/>
+</p>
+<p align="center">
+  <img src="newplot2.png" alt="graph" width="500"/>
 </p>
